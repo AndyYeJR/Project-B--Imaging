@@ -20,6 +20,8 @@ let blurIndex = 1;
 let tutorial = true;
 let help;
 let focusSound;
+let oneSnow = [];
+let amount = 500;
 
 
 function preload() {
@@ -37,12 +39,13 @@ function preload() {
 function setup() {
   let cnv = createCanvas(990, 720);
   cnv.parent("canvasContainerCam");
-
+  for (let i = 0; i < amount; i++) {
+    oneSnow[i] = new Snow();
+  }
 }
 
 function draw() {
   cursor('default');
-
 
   //drag photos
   if (mouseY < 690 && mouseY > 285 && mouseX <= 635 && mouseX >= 65 && imgX <= 20 && imgX >= -2180) {
@@ -65,6 +68,12 @@ function draw() {
     image(imgBlur, imgX, imgY, 410 * 7, 410);
   }
 
+  //snow
+  for (i = 0; i < amount; i++) {
+    oneSnow[i].update();
+    oneSnow[i].display();
+    oneSnow[i].turn();
+  }
 
   //mask
   push()
@@ -126,6 +135,27 @@ function draw() {
   click = false;
 }
 
+class Snow {
+  constructor() {
+    this.diameter = random(1, 6);
+    this.x = random(0, 3000);
+    this.y = random(250, height);
+    this.noise = noise(this.y);
+  }
+  update() {
+    this.y += this.diameter / 20;
+    this.x += this.noise - 0.5;
+  }
+  display() {
+    noStroke();
+    circle(this.x + imgX, this.y, this.diameter);
+  }
+  turn() {
+    if (this.y > height) {
+      this.y = 250;
+    }
+  }
+}
 
 function takePhoto() {
   if (mouseX > 700 && mouseX < 835 && mouseY > 165 && mouseY < 210) {
@@ -137,6 +167,17 @@ function takePhoto() {
       } else {
         image(imgBlur, saveX, 0, 720 * 7, 720);
       }
+
+      push()
+      scale(1.5)
+      translate(-40,-240)
+      for (i = 0; i < amount; i++) {
+        oneSnow[i].update();
+        oneSnow[i].display();
+        oneSnow[i].turn();
+      }
+      pop()
+
       push()
       if (evValue > 0) {
         fill(255, evValue * 40)
@@ -145,6 +186,7 @@ function takePhoto() {
       }
       rect(0, 0, width, height)
       pop()
+
       shutterSound.play();
       saveCanvas('myPhoto', 'png');
       erase();
@@ -219,3 +261,4 @@ function tutorialFunc() {
 function mouseClicked() {
   click = true
 }
+
