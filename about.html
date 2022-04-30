@@ -2,25 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleAbout.css">
 </head>
 
 <body>
-    <img src="http://59.127.70.206:88/webcapture.jpg?command=snap&channel=1">
+  <div class="headTitle">
+      <img src="assets/cameraPixel.png" class="logo" >
+      <h1 class="navLink0" onclick="javascript:location.href='index.html'" value="Back to title">Imaging</h1>
+      <div class="navDiv">
+          <a href="about.html" class="navLink1">
+              About
+          </a>
+      </div>
+  </div>
 
-    <p id="time"></p>
-    <script>
-      function getTimestamp() {
-        var timestamp = Date.parse(new Date())
-        var timestamp = String(timestamp)
-        var timestamp = timestamp.substring(0, 10)
-        document.getElementById("time").innerHTML = timestamp
-      }
-      setInterval("getTimestamp()", 1000)
-      </script>
+  <div class="picBg"></div>
+  <div class="linerBg"></div>
+  <div class="rBox1">
+    <p class="textTitle">Contents</p>
+    <hr>
+    <ul>
+      <li>Project Description</li>
+      <li>Artist Description</li>
+    </ul>
+  </div>
+
+  <div class="mainText">
+    <p class="title">Project B:<br>Imaging</p>
+    <div class="cBox1">
+      <p class="textTitle">Project Description</p>
+      <ul class="list1">
+        <li class="firstElement">This is a <b>Generative Rose</b></li>
+        <li class="secondElement">Press <b>mouse button</b> to give the location.</li>
+        <li>The clear button is for clearing the canvas.</li>
+        <li>The slide bar is for changing the speed.</li>
+      </ul>
+      <br>
+      <br>
+      <hr>
+      <p class="textTitle">Artist Description</p>
+      <img src="assets/Artist Description.png" class="intextImg">
+    </div>
+
+
+  </div>
+
+
 
 
 </body>
