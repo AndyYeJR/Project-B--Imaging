@@ -141,14 +141,19 @@ class Snow {
     this.x = random(0, 3000);
     this.y = random(250, height);
     this.noise = noise(this.y);
+    this.white = random(200,255)
+    this.trans = random(200,255)
   }
   update() {
     this.y += this.diameter / 20;
     this.x += this.noise - 0.5;
   }
   display() {
+    push()
     noStroke();
+    fill(this.white,this.trans)
     circle(this.x + imgX, this.y, this.diameter);
+    pop()
   }
   turn() {
     if (this.y > height) {
