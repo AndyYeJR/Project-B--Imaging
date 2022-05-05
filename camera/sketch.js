@@ -46,7 +46,7 @@ function setup() {
 
 function draw() {
   cursor('default');
-
+  
   //drag photos
   if (mouseY < 690 && mouseY > 285 && mouseX <= 635 && mouseX >= 65 && imgX <= 20 && imgX >= -2180) {
     cursor('w-resize');
@@ -130,6 +130,7 @@ function draw() {
   }
 
   //tutorial
+  text("Help: OFF",40,280)
   tutorialFunc()
 
   click = false;
@@ -254,6 +255,10 @@ function tutorialFunc() {
   }
   if (tutorial == true) {
     image(help, 0, 0, width, height);
+    textSize(20)
+    fill(255)
+    text("Help: ON",40,280)
+    text("Click anywhere to continue",220,680)
     if (dist(mouseX, mouseY, 80, 235) > 22.5 && click == true) {
       erase();
       rect(0, 0, width, height);
