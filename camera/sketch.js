@@ -174,9 +174,9 @@ function takePhoto() {
     push()
     textSize(40)
     fill(0)
-    text("Photograph",241,501)
+    text("SaveYourMemory",211,501)
     fill(255)
-    text("Photograph",240,500)
+    text("SaveYourMemory",210,500)
     pop()
     if (click == true) {
       saveX = map(imgX, 20, -2180, 0, -4000);
@@ -306,7 +306,7 @@ function tutorialFunc() {
     fill(255)
     textSize(15)
     text("Help: ON",40,280)
-    text("Click anywhere to continue",220,680)
+    text("Click anywhere to continue",255,680)
     if (dist(mouseX, mouseY, 80, 235) > 22.5 && click == true) {
       erase();
       rect(0, 0, width, height);
