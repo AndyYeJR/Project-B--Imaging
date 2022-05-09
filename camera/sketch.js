@@ -48,6 +48,9 @@ function setup() {
 }
 
 function draw() {
+  //tests
+  // console.log(mouseX, mouseY);
+  // console.log(click);
   cursor('default');
   textFont("Trebuchet MS");
   playMusic()
@@ -117,11 +120,6 @@ function draw() {
   autofocus();
   changeEv();
   takePhoto();
-
-
-  //tests
-  console.log(mouseX, mouseY);
-  // console.log(click);
 
   //exposure motions
   if (evChange == true) {
