@@ -41,6 +41,7 @@ canvas {
 }
 
 .logo {
+    cursor: pointer;
     position: absolute;
     width: 60px;
     margin: 10px;
