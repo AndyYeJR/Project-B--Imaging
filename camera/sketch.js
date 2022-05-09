@@ -22,6 +22,8 @@ let help;
 let focusSound;
 let oneSnow = [];
 let amount = 500;
+let bgm;
+let playBgm = false;
 
 
 function preload() {
@@ -34,6 +36,7 @@ function preload() {
   shutterSound = loadSound('assets/shutter.mp3');
   buttonSound = loadSound('assets/button.mp3')
   focusSound = loadSound('assets/focus.mp3')
+  bgm = loadSound('assets/Edelweiss(WithSnowSoundMix).mp3')
 }
 
 function setup() {
@@ -47,6 +50,7 @@ function setup() {
 function draw() {
   cursor('default');
   textFont("Trebuchet MS");
+  playMusic()
 
   //drag photos
   if (mouseY < 690 && mouseY > 285 && mouseX <= 635 && mouseX >= 65 && imgX <= 20 && imgX >= -2180) {
@@ -316,3 +320,10 @@ function mouseClicked() {
   click = true
 }
 
+function playMusic(){
+  if(playBgm == false){
+    bgm.playMode('restart');
+    bgm.play();  
+    playBgm = true
+  }
+}
