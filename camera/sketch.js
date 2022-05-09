@@ -46,7 +46,8 @@ function setup() {
 
 function draw() {
   cursor('default');
-  
+  textFont("Trebuchet MS");
+
   //drag photos
   if (mouseY < 690 && mouseY > 285 && mouseX <= 635 && mouseX >= 65 && imgX <= 20 && imgX >= -2180) {
     cursor('w-resize');
@@ -166,6 +167,13 @@ class Snow {
 function takePhoto() {
   if (mouseX > 700 && mouseX < 835 && mouseY > 165 && mouseY < 210) {
     cursor('pointer');
+    push()
+    textSize(40)
+    fill(0)
+    text("Photograph",241,501)
+    fill(255)
+    text("Photograph",240,500)
+    pop()
     if (click == true) {
       saveX = map(imgX, 20, -2180, 0, -4000);
       if (focus == true) {
@@ -205,6 +213,13 @@ function takePhoto() {
 function changeEv() {
   if (mouseX > 848 && mouseX < 913 && mouseY > 157 && mouseY < 193) {
     cursor('zoom-out');
+    push()
+    textSize(40)
+    fill(0)
+    text("ExposureValue -",201,501)
+    fill(255)
+    text("ExposureValue -",200,500)
+    pop()
     if (click == true && evValue >= -4.5) {
       buttonSound.play()
       evChange = true
@@ -212,6 +227,13 @@ function changeEv() {
     }
   } else if (mouseX > 913 && mouseX < 978 && mouseY > 157 && mouseY < 193) {
     cursor('zoom-in');
+    push()
+    textSize(40)
+    fill(0)
+    text("ExposureValue +",201,501)
+    fill(255)
+    text("ExposureValue +",200,500)
+    pop()
     if (click == true && evValue <= 4.5) {
       buttonSound.play()
       evChange = true
@@ -223,6 +245,13 @@ function changeEv() {
 function display() {
   if (dist(mouseX, mouseY, 760, 500) < 25) {
     cursor('pointer')
+    push()
+    textSize(40)
+    fill(0)
+    text("ChangeDisplayInfo",181,501)
+    fill(255)
+    text("ChangeDisplayInfo",180,500)
+    pop()
     if (click == true) {
       buttonSound.play()
       if (disp < 2) {
@@ -237,6 +266,13 @@ function display() {
 function autofocus() {
   if (dist(mouseX, mouseY, 700, 237.5) < 22.5) {
     cursor('pointer')
+    push()
+    textSize(40)
+    fill(0)
+    text("Focus",301,501)
+    fill(255)
+    text("Focus",300,500)
+    pop()
     if (click == true) {
       buttonSound.play()
       focusSound.play()
@@ -248,6 +284,13 @@ function autofocus() {
 function tutorialFunc() {
   if (dist(mouseX, mouseY, 80, 235) < 22.5) {
     cursor('pointer')
+    push()
+    textSize(40)
+    fill(0)
+    text("Help",311,501)
+    fill(255)
+    text("Help",310,500)
+    pop()
     if (click == true) {
       buttonSound.play()
       tutorial = true;
@@ -257,6 +300,7 @@ function tutorialFunc() {
     image(help, 0, 0, width, height);
     textSize(20)
     fill(255)
+    textSize(15)
     text("Help: ON",40,280)
     text("Click anywhere to continue",220,680)
     if (dist(mouseX, mouseY, 80, 235) > 22.5 && click == true) {
