@@ -108,6 +108,11 @@ canvas {
     background-color: rgba(0, 0, 0, 0.301);
     color: rgb(255, 255, 255);
     border: 2px solid #00000000;
+    font-size: 20px;
+    height: 30%;
+    width: 100%;
+    right: 25%;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -120,26 +125,7 @@ canvas {
     padding-left: 70px;
 }
 
-#button1 {
-    font-size: 20px;
-    height: 30%;
-    width: 100%;
-    left: 25%;
-}
 
-#button2 {
-    font-size: 20px;
-    height: 30%;
-    width: 100%;
-    right: 25%;
-}
-
-#button3 {
-    font-size: 20px;
-    height: 30%;
-    width: 100%;
-    right: 25%;
-}
 
 #canvasContainerCam {
     position: absolute;
