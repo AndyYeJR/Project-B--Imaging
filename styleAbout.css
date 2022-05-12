@@ -138,7 +138,8 @@ canvas {
     border-style: solid;
     border-radius: 30px;
     border-width: 0px;
-    padding: 20px;
+    margin-top: 0px;
+    padding: 40px;
     height: fit-content
 }
 
@@ -168,7 +169,7 @@ canvas {
 
 .text{
     margin: 30px;
-    margin-left: 10px;
+    margin-top: 10px;
     margin-bottom: 0px;
 }
 
