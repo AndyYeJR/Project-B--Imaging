@@ -74,6 +74,8 @@ canvas {
     margin: 0px;
 }
 
+
+/* details */
 .profileBG {
     width: 130%;
     height: 100%;
@@ -140,6 +142,10 @@ canvas {
 .player{
     margin: 30px;
     margin-top: 0px;
+}
+
+.position{
+    width:100%;
 }
 
 #main{
